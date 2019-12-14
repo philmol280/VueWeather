@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="informer-container">
+      <div class="temperature">
+        <img src="img/thermometer.png">
+        <div class="temp-real">1</div>
+        <div class="temp-feel">-3.8</div>
+      </div>
+      <div class="flex-break"></div>
+      <div class="humidity">
+        <img src="img/humidity.png"> 12 <small>%</small>
+      </div>
+      <div class="vertical-divider"></div>
+      <div class="wind">
+        <img src="img/wind.png"> 12 <small>м/с</small>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import mykontainer from './components/mykontainer.vue'
+import humidity from './components/humidity.vue'
+import wind from './components/wind.vue'
+import temperature from './components/temperature.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    mykontainer,
+    humidity,
+    wind,
+    temperature
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(244, 123, 186);
+  background: linear-gradient(-25deg, rgba(244, 123, 186, 0.5) 20%, rgba(90, 95, 245, 0.5) 80%);
 }
 </style>
